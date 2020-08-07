@@ -190,6 +190,10 @@
               </div>
             </div>
 
+            <div class="row" style="margin-left: 30px;">
+              <recaptcha @error="onError" @success="onSuccess" @expired="onExpired" />
+            </div>
+
             <div class="row mt-3">
               <div class="col-md-12">
                 <!-- FORM SUBMIT BUTTON -->
@@ -232,9 +236,6 @@
                 </button>
                 <!-- -->
               </div>
-            </div>
-            <div class="row">
-              <recaptcha @error="onError" @success="onSuccess" @expired="onExpired" />
             </div>
           </div>
         </div>

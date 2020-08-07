@@ -84,9 +84,9 @@ export default {
   */
   recaptcha: {
     hideBadge: false, // Hide badge element (v3 & v2 via size=invisible)
-    siteKey: '6LewnrsZAAAAAGl37ooaSgbpQXVzcPjIb9w19p6p', // Site key for requests
+    siteKey: '6LfZrrsZAAAAAFVixePZ4f2yUdZX7MC2c4NM9Qq1', // Site key for requests
     version: 2, // Version
-    size: 'invisible' // Size: 'compact', 'normal', 'invisible' (v2)
+    size: 'normal' // Size: 'compact', 'normal', 'invisible' (v2)
   },
   axios: {},
   /*
