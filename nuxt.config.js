@@ -60,6 +60,9 @@ export default {
   */
   buildModules: [
   ],
+  loaders: [
+    { test: /\.js$/, loader: 'babel', query: { compact: false } }
+  ],
   /*
   ** Nuxt.js modules
   */
@@ -73,6 +76,8 @@ export default {
     '@nuxtjs/dotenv',
     'cookie-universal-nuxt'
   ],
+
+
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

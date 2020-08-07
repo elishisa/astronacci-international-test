@@ -246,6 +246,7 @@
 <script>
 import axios from "axios";
 import JQuery from "jquery";
+import SHA2 from "sha2";
 let $ = JQuery;
 
 export default {
@@ -552,7 +553,7 @@ export default {
         this.passwordCheck &&
         this.fotoKtpCheck
       ) {
-        // this.uploadFoto();
+        this.postRegist();
         alert("bisa");
       } else {
         alert("gagal melakukan registrasi");
@@ -564,7 +565,26 @@ export default {
     uploadFoto() {},
 
     /** POST USER INFO */
-    async postUserInfo(fotoKtpName, fotoNpwpName = null) {},
+    async postRegist() {
+      if (this.password) {
+        const dataEncode = SHA2.SHA256(this.password)
+          .toString("hex")
+          .toUpperCase();
+        let data = {
+          user_id: "",
+          username: this.username,
+          email: this.email,
+          password: dataEncode,
+          foto: this.fotoKtp,
+        };
+
+        alert(data.password);
+      } else {
+        this.errorMessagePass =
+          "Terjadi kesalahan, silakan cek password yang Anda masukkan";
+        this.isLoadingPass = false;
+      }
+    },
   },
 };
 </script>
