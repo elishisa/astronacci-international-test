@@ -1,9 +1,7 @@
 <template>
   <div class="container-static">
     <section class="col-2 color ss-style-curvedown">
-      <div class="column text">
-        <!-- <h2>Curvedown</h2> -->
-      </div>
+      <div class="column text"></div>
     </section>
 
     <svg
@@ -11,26 +9,31 @@
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       width="100%"
-      height="300"
+      height="80"
       viewBox="0 0 100 100"
       preserveAspectRatio="none"
     >
       <path d="M0 0 C 50 100 80 100 100 0 Z" />
     </svg>
     <div class="container login-padding">
+      <p class="lead">
+        <a href="/home" class="btn btn-sm btn-main">Kembali ke halaman awal</a>
+      </p>
       <div class="row">
-        <div class="col-12"></div>
+        <div class="col-12">
+          <ul>
+            <li>Notes:</li>
+            <li>(Tipe A) Email : admin123@gmail.com , Password: admin123</li>
+            <li>(Tipe B) Email : admin@gmail.com , Password: adminadmin</li>
+            <li>(Tipe C) Email : admin345@gmail.com , Password: admin345</li>
+          </ul>
+        </div>
         <div class="col-4"></div>
         <div class="col-4">
           <div class="row border-login">
             <div class="col-12 mb-3">
               <div class="text-center">
-                <img src="@/assets/icon/ic_gada_200x200.png" height="60px" class="mb-3" />
-
-                <h4
-                  class="color-black font-weight-bold p-2"
-                  style="line-height: 1.4em"
-                >Pengundian GudangAda</h4>
+                <h4 class="color-black font-weight-bold p-2" style="line-height: 1.4em">Login</h4>
               </div>
             </div>
             <div class="col-12">
@@ -158,13 +161,12 @@ export default {
           .then((response) => {
             this.loading = false;
             firebase.auth().onAuthStateChanged((user) => {
-              console.log(user);
               if (user) {
                 this.$cookies.set("token", user.uid, {
-                  path: "/homepage",
+                  path: "/",
                   maxAge: 60 * 60 * 24 * 7,
                 });
-                this.$router.push("/homepage");
+                this.$router.push("/");
               } else {
               }
             });

@@ -1,6 +1,11 @@
 <template>
-  <h1>Selamat Anda Berhasil Login</h1>
+  <div class="container">
+    <div>
+      <signin />
+    </div>
+  </div>
 </template>
+
 <script>
 export default {};
 </script>

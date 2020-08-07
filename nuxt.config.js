@@ -37,7 +37,19 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    '~/plugins/firebase.js',
   ],
+  env: {
+    GADA_FIREBASE_API_KEY: process.env.GADA_FIREBASE_API_KEY,
+    GADA_FIREBASE_APP_ID: process.env.GADA_FIREBASE_APP_ID,
+    GADA_FIREBASE_AUTH_DOMAIN: process.env.GADA_FIREBASE_AUTH_DOMAIN,
+    GADA_FIREBASE_DATABASE_URL: process.env.GADA_FIREBASE_DATABASE_URL,
+    GADA_FIREBASE_MEASUREMENT_ID: process.env.GADA_FIREBASE_MEASUREMENT_ID,
+    GADA_FIREBASE_MESSAGING_SENDER_ID: process.env.GADA_FIREBASE_MESSAGING_SENDER_ID,
+    GADA_FIREBASE_PASSWORD: process.env.GADA_FIREBASE_PASSWORD,
+    GADA_FIREBASE_PROJECT_ID: process.env.GADA_FIREBASE_PROJECT_ID,
+    GADA_FIREBASE_STORAGE_BUCKET: process.env.GADA_FIREBASE_STORAGE_BUCKET,
+  },
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components
@@ -57,7 +69,9 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     'bootstrap-vue/nuxt',
-    '@nuxtjs/recaptcha'
+    '@nuxtjs/recaptcha',
+    '@nuxtjs/dotenv',
+    'cookie-universal-nuxt'
   ],
   /*
   ** Axios module configuration
@@ -65,7 +79,7 @@ export default {
   */
   recaptcha: {
     hideBadge: false, // Hide badge element (v3 & v2 via size=invisible)
-    siteKey: 'YOUR SITE KEY', // Site key for requests
+    siteKey: '6LewnrsZAAAAAGl37ooaSgbpQXVzcPjIb9w19p6p', // Site key for requests
     version: 2, // Version
     size: 'invisible' // Size: 'compact', 'normal', 'invisible' (v2)
   },
