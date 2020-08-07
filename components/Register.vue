@@ -633,7 +633,7 @@ input[type="file"] {
 .alert-empty-special {
   color: rgb(218, 52, 52);
   font-size: 12px;
-  margin-top: -20px;
+  margin-top: 0px;
   display: none;
 }
 .alert-empty-green {
